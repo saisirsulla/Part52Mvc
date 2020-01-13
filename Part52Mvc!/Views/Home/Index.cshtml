@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Part52Mvc_.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div style="font-family:Arial">
+    @foreach (var item in Model)
+    {
+        //Partial return type is MvcHtmlString
+        @Html.Partial("_Employee",item)
+
+        //RenderPartial return type is void, it is compulsory to wrap renderpartial function inside curly braces
+        { Html.RenderPartial("_Employee", item); }
+        <br />
+    }
+</div>
+
+
+
